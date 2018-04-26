@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<head>
+	<title>Shaq's Assistant</title>
+	<style>
+		h1 {font-family: "verdana";}
+		h2 {font-family: "verdana";
+	        font-size: 16px;
+	        font-style: bold}
+		p {font-family: "verdana";}
+		div {font-family: "verdana";}
+		img {width: 50%;
+		     height: auto;}
+	</style>
+</head>
+
+
+<body>
+	<center>
+		<h1>Shaq's Free Throw Assistant</h1>
+		<div style = "border: 1px solid black; width: 700px">
+			<img id="backboard" src="backboard.jpg">
+			<div id="coords"></div>
+			<div id="x_coord">X Coordinate</div>
+			<div id="y_coord">Y Coordinate</div>
+			<p> Did you score? </p>
+			<input type="checkbox" id="shot_success" /><button onclick="onSubmit()">Save</button>
+		</div>
+
+		<!-- <p></p>
+
+		<div style = "border: 1px solid black;">
+		  <h2>Wrist angle data throughout the throw </h2>
+		  <p>Gathered from flex sensor and photo cell</p>
+		</div> -->
+
+		<p></p>
+
+		<div id = "scatter_chart" style = "width: 700px; height: 400px; border: 1px solid black"></div>
+
+		<p></p>
+
+		<div id = "speed_chart" style = "width: 700px; height: 400px; border: 1px solid black"></div>
+
+
+
+		<!-- <div style = "border: 1px solid black;"> 
+		  <h2>Trajectory direction data </h2>
+		  <p>Gathered from IMU</p>
+		</div> -->
+
+	</center>
+</body>
+
+<script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type = "text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type = "text/javascript">google.charts.load('current', {packages: ['corechart','line']});</script>
+<script language="JavaScript" type="text/javascript" src="javascript.js"></script>
+
+
+</html>

@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
+    <title>Firebase example</title>
+  </head>
+  <body>
+    <h1>Firebase example</h1>
+    <pre id='data'></pre>
+  </body>
+
+
+  <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyACkpbw7M9mGnjfm1dSNgAxwH4KbS4qsHY",
+      authDomain: "sports-technology.firebaseapp.com",
+      databaseURL: "https://sports-technology.firebaseio.com",
+      projectId: "sports-technology",
+      storageBucket: "sports-technology.appspot.com",
+      messagingSenderId: "551014293574"
+    };
+    firebase.initializeApp(config);
+
+    var ref = firebase.database().ref();                           
+    
+    ref.on("value", function(snapshot){
+      document.getElementById("data").innerHTML = JSON.stringify(snapshot.val(), null, 2);
+    });
+  </script>
+</html>
